@@ -10,7 +10,7 @@ local gfx <const> = playdate.graphics
 local a = Player;
 local b = Platform;
 
-local function myGameSetUp()
+local function init()
 	a:init()
 	b:init(200, 200)
 
@@ -24,7 +24,7 @@ local function myGameSetUp()
 	)
 end
 
-myGameSetUp()
+init()
 
 function playdate.update()
 

@@ -1,0 +1,9 @@
+Vector2D = {
+    x = 0,
+    y = 0
+}
+
+function Vector2D:init(x, y)
+    this.x = x
+    this.y = y
+end

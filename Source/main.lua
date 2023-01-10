@@ -7,7 +7,7 @@ import "platform"
 
 local gfx <const> = playdate.graphics
 
-local a = Player(0,0);
+local a = RigidBody2D("Images/playerImage.png", 200,50);
 local b = Platform;
 
 local function init()
@@ -26,24 +26,6 @@ end
 init()
 
 function playdate.update()
-
-	if playdate.buttonIsPressed( playdate.kButtonUp ) then
-		a.velocity.y = -2
-	end
-	if playdate.buttonIsPressed( playdate.kButtonRight ) then
-		a:move( 2, 0 )
-	end
-	if playdate.buttonIsPressed( playdate.kButtonDown ) then
-		a:move( 0, 2 )
-	end
-	if playdate.buttonIsPressed( playdate.kButtonLeft ) then
-		a:move( -2, 0 )
-	end
-	
-	a.velocity.y = a.velocity.y + 0.1
-	a:move(0, a.velocity.y)
-
 	gfx.sprite.update()
 	playdate.timer.updateTimers()
-
 end

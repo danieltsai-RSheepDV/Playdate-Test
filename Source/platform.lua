@@ -15,6 +15,6 @@ function Platform:init(x, y)
 	
 	self.sprite = gfx.sprite.new( playerImage )
 	self.sprite:moveTo( x, y )
-	self.sprite:add()
 	self.sprite:setCollideRect( 0, 0, self.sprite:getSize() )
+	self.sprite:add()
 end

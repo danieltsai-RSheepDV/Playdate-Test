@@ -3,6 +3,8 @@ import "CoreLibs/graphics"
 import "CoreLibs/sprites"
 import "CoreLibs/timer"
 
+import "Physics/Vector2D"
+
 local gfx <const> = playdate.graphics
 
 class('RigidBody2D').extends(gfx.sprite)
@@ -11,10 +13,10 @@ function RigidBody2D:init(spriteString, x, y)
 	local playerImage = gfx.image.new(spriteString)
 	assert( playerImage )
 	
-	self:setImage(gfx.sprite.new( playerImage ))
+	self:setImage(playerImage)
 	self:moveTo( x, y )
 	self:add()
-	self:setCollideRect( 0, 0, self.sprite:getSize() )
+	self:setCollideRect( 0, 0, self:getSize() )
 
 	self.velocity = Vector2D(0,0)
 
@@ -22,7 +24,7 @@ function RigidBody2D:init(spriteString, x, y)
 end
 
 function RigidBody2D:move(x, y)
-	self.sprite:moveWithCollisions(self.sprite.x + x, self.sprite.y + y)
+	self:moveWithCollisions(self.x + x, self.y + y)
 end
 
 function RigidBody2D:collisionResponse(other)

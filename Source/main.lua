@@ -40,8 +40,8 @@ function playdate.update()
 		a:move( -2, 0 )
 	end
 	
-	-- a.velocity.y = a.velocity.y + 0.1
-	-- a:move(0, a.velocity.y)
+	a.velocity.y = a.velocity.y + 0.1
+	a:move(0, a.velocity.y)
 
 	gfx.sprite.update()
 	playdate.timer.updateTimers()

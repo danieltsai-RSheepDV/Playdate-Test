@@ -7,11 +7,10 @@ import "platform"
 
 local gfx <const> = playdate.graphics
 
-local a = Player;
+local a = Player(0,0);
 local b = Platform;
 
 local function init()
-	a:init()
 	b:init(200, 200)
 
 	local backgroundImage = gfx.image.new( "Images/playerImage.png" )
@@ -29,7 +28,7 @@ init()
 function playdate.update()
 
 	if playdate.buttonIsPressed( playdate.kButtonUp ) then
-		a.speed = -2
+		a.velocity.y = -2
 	end
 	if playdate.buttonIsPressed( playdate.kButtonRight ) then
 		a:move( 2, 0 )
@@ -41,8 +40,8 @@ function playdate.update()
 		a:move( -2, 0 )
 	end
 	
-	a.speed = a.speed + 0.1
-	a:move(0, a.speed)
+	-- a.velocity.y = a.velocity.y + 0.1
+	-- a:move(0, a.velocity.y)
 
 	gfx.sprite.update()
 	playdate.timer.updateTimers()

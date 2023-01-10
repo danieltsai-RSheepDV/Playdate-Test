@@ -5,20 +5,20 @@ import "CoreLibs/timer"
 
 local gfx <const> = playdate.graphics
 
-RigidBody2D = {
-	sprite = nil,
-	speed = 0.0
-}
+class('RigidBody2D').extends(gfx.sprite)
 
-function RigidBody2D:init()
-	local playerImage = gfx.image.new("Images/playerImage.png")
+function RigidBody2D:init(spriteString, x, y)
+	local playerImage = gfx.image.new(spriteString)
 	assert( playerImage )
-	print("tests");
 	
-	self.sprite = gfx.sprite.new( playerImage )
-	self.sprite:moveTo( 200, 120 )
-	self.sprite:add()
-	self.sprite:setCollideRect( 0, 0, self.sprite:getSize() )
+	self:setImage(gfx.sprite.new( playerImage ))
+	self:moveTo( x, y )
+	self:add()
+	self:setCollideRect( 0, 0, self.sprite:getSize() )
+
+	self.velocity = Vector2D(0,0)
+
+	print("ran")
 end
 
 function RigidBody2D:move(x, y)

@@ -1,7 +1,4 @@
-Vector2D = {
-    x = 0,
-    y = 0
-}
+class('Vector2D')
 
 function Vector2D:init(x, y)
     self.x = x

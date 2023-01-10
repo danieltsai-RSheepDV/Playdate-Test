@@ -12,7 +12,6 @@ Platform = {
 function Platform:init(x, y)
 	local playerImage = gfx.image.new("Images/playerImage copy.png")
 	assert( playerImage )
-	print("tests");
 	
 	self.sprite = gfx.sprite.new( playerImage )
 	self.sprite:moveTo( x, y )

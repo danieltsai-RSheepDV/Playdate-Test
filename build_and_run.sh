@@ -1,4 +1,12 @@
 #!/bin/sh
+if [ ! -d Temp ]
+then
+    mkdir Temp
+fi
+if [ ! -d Builds ]
+then
+    mkdir Builds
+fi
 
 pdc Source Builds/Game.pdx
 cd Temp

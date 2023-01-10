@@ -20,5 +20,8 @@ cd Temp
 # fi
 if [[ $OSTYPE == 'darwin'* ]]; then
     open "$HOME/Developer/PlaydateSDK/bin/Playdate Simulator.app" ../Builds/Game.pdx
-fi 
+fi
+if [[ $OSTYPE == 'msys'* ]]; then
+    start %PLAYDATE_SDK_PATH%/bin/PlaydateSimulator.exe ../Builds/Game.pdx
+fi
 cd ..

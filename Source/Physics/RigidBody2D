@@ -21,13 +21,12 @@ function RigidBody2D:init()
 	self.sprite:setCollideRect( 0, 0, self.sprite:getSize() )
 end
 
-function Player:move(x, y)
+function RigidBody2D:move(x, y)
 	self.sprite:moveWithCollisions(self.sprite.x + x, self.sprite.y + y)
 end
 
-function Player:collisionResponse(other)
+function RigidBody2D:collisionResponse(other)
     local response = gfx.sprite.kCollisionTypeOverlap
-    
     
     return response
 end

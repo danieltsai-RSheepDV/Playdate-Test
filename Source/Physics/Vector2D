@@ -4,6 +4,6 @@ Vector2D = {
 }
 
 function Vector2D:init(x, y)
-    this.x = x
-    this.y = y
+    self.x = x
+    self.y = y
 end

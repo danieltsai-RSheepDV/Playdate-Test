@@ -3,8 +3,6 @@ import "CoreLibs/graphics"
 import "CoreLibs/sprites"
 import "CoreLibs/timer"
 
-import "Physics/Vector2D"
-
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 local geo <const> = pd.geometry
